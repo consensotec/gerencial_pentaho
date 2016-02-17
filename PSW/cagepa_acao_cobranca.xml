@@ -1,0 +1,248 @@
+<Schema name="CAGEPA:Resumos de A&#231;&#227;o de Cobran&#231;a">
+  <Cube name="ResumoCobrancaAcaoEventual" caption="Analise de Cobran&#231;a A&#231;&#227;o Eventual" visible="true" cache="true" enabled="true">
+    <Table name="fato_cobranca_acao_eventual" schema="gerencial_cagepa">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmlo_id" highCardinality="false" name="Localizacao" caption="Localizacao">
+      <Hierarchy name="Gerencia - Unidade - Localidade - Setor - Municipio" visible="true" hasAll="true" primaryKey="dmlo_id" caption="Localizacao">
+        <Table name="dimen_localizacao" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Gerencia Regional" visible="true" column="greg_id" nameColumn="greg_nmregional" ordinalColumn="greg_nmregional" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Gerencia Regional">
+        </Level>
+        <Level name="Unidade de Negocio" visible="true" column="uneg_id" nameColumn="uneg_nmunidadenegocio" ordinalColumn="uneg_nmunidadenegocio" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Localidade Elo" visible="true" column="loca_cdelo" nameColumn="loca_nmlocalidadeelo" ordinalColumn="loca_nmlocalidadeelo" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Localidade" visible="true" column="loca_id" nameColumn="loca_nmlocalidade" ordinalColumn="loca_nmlocalidade" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Setor Comercial" visible="true" column="stcm_id" nameColumn="stcm_nmsetorcomercial" ordinalColumn="stcm_nmsetorcomercial" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Rota" visible="true" column="rota_cdrota" nameColumn="rota_desc" ordinalColumn="rota_cdrota" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Rota">
+        </Level>
+        <Level name="Quadra" visible="true" column="qdra_id" nameColumn="qdra_desc" ordinalColumn="qdra_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="dmtp_id" highCardinality="false" name="Tempo" caption="Tempo Referencia">
+      <Hierarchy name="AnoMes" visible="true" hasAll="true" primaryKey="dmtp_id">
+        <Table name="dimen_tempo" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Ano" visible="true" column="ano" ordinalColumn="ano" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="AnoMes" visible="true" column="mesNumero" nameColumn="anomes" ordinalColumn="mesNumero" type="Integer" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmgr_id" highCardinality="false" name="Geografia">
+      <Hierarchy name="Geografia" visible="true" hasAll="true" primaryKey="dmgr_id">
+        <Table name="dimen_geografica" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Municipio" visible="true" column="muni_id" nameColumn="muni_nmmunicipio" ordinalColumn="muni_nmmunicipio" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Munic&#237;pio">
+        </Level>
+        <Level name="Bairro" visible="true" column="bair_id" nameColumn="bair_nmbairro" ordinalColumn="bair_nmbairro" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Bairro">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmcs_id" highCardinality="false" name="Categoria">
+      <Hierarchy name="Categoria" visible="true" hasAll="true" primaryKey="dmcs_id" caption="Categoria">
+        <Table name="dimen_categoria_subcategoria" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Categoria" visible="true" column="catg_id" nameColumn="catg_dscategoria" ordinalColumn="catg_dscategoria" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmsa_id" highCardinality="false" name="Situacao Agua">
+      <Hierarchy name="Situacao Agua" visible="true" hasAll="true" primaryKey="dmsa_id">
+        <Table name="dimen_situacao_agua" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Situacao Agua" visible="true" column="last_id" nameColumn="last_dsligacaoaguasituacao" ordinalColumn="last_dsligacaoaguasituacao" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmse_id" highCardinality="false" name="SituacaoEsgoto">
+      <Hierarchy name="SituacaoEsgoto" visible="true" hasAll="true" primaryKey="dmse_id">
+        <Table name="dimen_situacao_esgoto" schema="gerencial_cagepa">
+        </Table>
+        <Level name="SituacaoEsgoto" visible="true" column="lest_id" nameColumn="lest_dsligacaoesgotosituacao" ordinalColumn="lest_dsligacaoesgotosituacao" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Situacao Esgoto">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmct_id" highCardinality="false" name="Esfera de Poder">
+      <Hierarchy name="Esfera de Poder" visible="true" hasAll="true" primaryKey="dmct_id">
+        <Table name="dimen_cliente_tipo" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Esfera de Poder" visible="true" column="epod_id" nameColumn="epod_dsesferapoder" ordinalColumn="epod_dsesferapoder" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmftgr_id" highCardinality="false" name="Grupo de Faturamento">
+      <Hierarchy name="Grupo de Faturamento" visible="true" hasAll="true" primaryKey="dmftgr_id">
+        <Table name="dimen_faturamento_grupo" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Grupo de Faturamento" visible="true" column="ftgr_id" nameColumn="ftgr_dsfaturamentogrupo" ordinalColumn="ftgr_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmlo_id" highCardinality="false" name="Area Tipo" caption="Area Tipo">
+      <Hierarchy name="Area Tipo" visible="true" hasAll="true" primaryKey="dmlo_id" caption="Area Tipo">
+        <Table name="dimen_localizacao" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Area Tipo" visible="true" column="arti_id" nameColumn="arti_dsarea" ordinalColumn="arti_dsarea" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Area Tipo">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmpt_id" highCardinality="false" name="Perfil do Imovel">
+      <Hierarchy name="Perfil do Imovel" visible="true" hasAll="true" primaryKey="dmpt_id">
+        <Table name="dimen_perfil_imovel_tarifa" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Perfil" visible="true" column="iper_id" nameColumn="iper_dsimovelperfil" ordinalColumn="iper_dsimovelperfil" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Perfil Imovel">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmdt_id" highCardinality="false" name="DocumetnoTipo" caption="Documento Tipo">
+      <Hierarchy name="Documento Tipo" visible="true" hasAll="true" primaryKey="dmdt_id">
+        <Table name="dimen_documento_tipo" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Documento Tipo" visible="true" column="dotp_id" nameColumn="dotp_dsdocumentotipo" ordinalColumn="dotp_dsdocumentotipo" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmarrc_id" highCardinality="false" name="Arrecadador">
+      <Hierarchy name="Arrecadador" visible="true" hasAll="true" primaryKey="dmarrc_id">
+        <Table name="dimen_arrecadador" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Codigo" visible="true" column="arrc_id" nameColumn="arrc_cdagente" ordinalColumn="arrc_cdagente" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Codigo">
+        </Level>
+        <Level name="Arrecadador" visible="true" column="arrc_id" nameColumn="arrc_nmcliente" ordinalColumn="arrc_nmcliente" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Arrecadador ">
+        </Level>
+        <Level name="Cod_Arrec" visible="true" column="arrc_id" nameColumn="cod_desc" ordinalColumn="cod_desc" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Codigo e Arrecadador">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmcbac_id" highCardinality="false" name="AcaoCobranca" caption="A&#231;&#227;o de Cobran&#231;a">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmcbac_id">
+        <Table name="dimen_cobranca_acao" schema="gerencial_cagepa">
+        </Table>
+        <Level name="acaocobranca" visible="true" column="cbac_id" nameColumn="cbac_dscobrancaacao" ordinalColumn="cbac_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="A&#231;&#227;o de Cobran&#231;a">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="false" foreignKey="dmacef_id" highCardinality="false" name="CobrancaAcaoEfeito" caption="A&#231;&#227;o Cobran&#231;a Efeito">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmacef_id">
+        <Table name="dimen_cobranca_acao_efeito" schema="gerencial_cagepa">
+        </Table>
+        <Level name="AcaoCobrancaEfeito" visible="true" column="acef_id" nameColumn="acef_dsefeito" ordinalColumn="acef_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="A&#231;&#227;o Cobran&#231;a Efeito">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmcast_id" highCardinality="false" name="CobrancaAcaoSituacao" caption="A&#231;&#227;o Cobran&#231;a Situa&#231;&#227;o">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmcast_id">
+        <Table name="dimen_cobranca_acao_situacao" schema="gerencial_cagepa">
+        </Table>
+        <Level name="CobrancaAcaoSituacao" visible="true" column="cast_id" nameColumn="cast_dssituacaoacao" ordinalColumn="cast_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="A&#231;&#227;o Cobran&#231;a Situa&#231;&#227;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmcbct_id" highCardinality="false" name="CobrancaCriterio" caption="Criterio de Cobran&#231;a">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmcbct_id">
+        <Table name="dimen_cobranca_criterio" schema="gerencial_cagepa">
+        </Table>
+        <Level name="CobrancaCriterio" visible="true" column="cbct_id" nameColumn="cbct_dscobrancacriterio" ordinalColumn="cbct_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Criterio de Cobran&#231;a">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmcdst_id" highCardinality="false" name="CobrancaDebitoSituacao" caption="Situacao do Debito">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmcdst_id">
+        <Table name="dimen_cobranca_debito_situacao" schema="gerencial_cagepa">
+        </Table>
+        <Level name="CobrancaDebitoSituacao" visible="true" column="cdst_id" nameColumn="cdst_dssituacaodebito" ordinalColumn="cdst_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Situa&#231;&#227;o do Debito">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmcbgr_id" highCardinality="false" name="CobrancaGrupo" caption="Grupo de Cobran&#231;a">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmcbgr_id">
+        <Table name="dimen_cobranca_grupo" schema="gerencial_cagepa">
+        </Table>
+        <Level name="CobrancaGrupo" visible="true" column="cbgr_id" nameColumn="cbgr_dscobrancagrupo" ordinalColumn="cbgr_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Grupo de Cobran&#231;a">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmcbst_id" highCardinality="false" name="CobrancaSituacao" caption="Situacao Cobran&#231;a">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmcbst_id">
+        <Table name="dimen_cobranca_situacao" schema="gerencial_cagepa">
+        </Table>
+        <Level name="CobrancaSituracao" visible="true" column="cbst_id" nameColumn="cbst_dscobrancasituacao" ordinalColumn="cbst_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Situaca&#231;&#227;o da Cobran&#231;a">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmem_id" highCardinality="false" name="Empresa">
+      <Hierarchy name="Empresa" visible="true" hasAll="true" primaryKey="dmem_id">
+        <Table name="dimen_empresa" schema="gerencial_cagepa">
+        </Table>
+        <Level name="Empresa" visible="true" column="empr_id" nameColumn="empr_nmempresa" ordinalColumn="empr_nmempresa" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmmned_id" highCardinality="false" name="motivo_nao_entrega_documento" caption="Motivo Nao Entrega Documento">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmmned_id">
+        <Table name="dimen_motivo_nao_entrega_documento" schema="gerencial_cagepa">
+        </Table>
+        <Level name="MotivoNaoEntregaDoc" visible="true" column="mned_id" nameColumn="mned_dsmotivonaoeentregadocume" ordinalColumn="mned_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Motivo Nao Engrega Documento">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmsvtp_id" highCardinality="false" name="ServicoTipo" caption="Tipo de Servi&#231;o">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmsvtp_id">
+        <Table name="dimen_servico_tipo_perfil" schema="gerencial_cagepa">
+        </Table>
+        <Level name="ServicoTipo" visible="true" column="svtp_id" nameColumn="svtp_dsservicotipo" ordinalColumn="svtp_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Tipo de Servi&#231;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dmsvtp_id" highCardinality="false" name="PerfilServico" caption="Perfil do Servi&#231;o">
+      <Hierarchy name="acao" visible="true" hasAll="true" primaryKey="dmsvtp_id">
+        <Table name="dimen_servico_tipo_perfil" schema="gerencial_cagepa">
+        </Table>
+        <Level name="PerfilServico" visible="true" column="sptp_id" nameColumn="sptp_dsservicoperfiltipo" ordinalColumn="sptp_id" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Perfil do Servi&#231;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="dmtp_id_emissao" highCardinality="false" name="EmissaoData" caption="Data de Emissao">
+      <Hierarchy name="emissao" visible="true" hasAll="true" primaryKey="dmtp_id">
+        <Table name="dimen_tempo" schema="gerencial_cagepa">
+        </Table>
+        <Level name="AnoEmissao" visible="true" column="ano" ordinalColumn="ano" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano de Emiss&#227;o">
+        </Level>
+        <Level name="MesEmissao" visible="true" column="mesNumero" nameColumn="mesAbrev" ordinalColumn="mesNumero" type="Integer" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="Mes de Emissao">
+        </Level>
+        <Level name="DataEmissao" visible="true" column="dmtp_id" nameColumn="data_string_br" ordinalColumn="dmtp_id" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Emiss&#227;o">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="TimeDimension" visible="true" foreignKey="dmtp_id_encerr" highCardinality="false" name="EncerramentoData" caption="Data de Encerramento">
+      <Hierarchy name="encerramento" visible="true" hasAll="true" primaryKey="dmtp_id">
+        <Table name="dimen_tempo" schema="gerencial_cagepa">
+        </Table>
+        <Level name="AnoEncerramento" visible="true" column="ano" ordinalColumn="ano" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano de Encerramento">
+        </Level>
+        <Level name="MesEncerramento" visible="true" column="mesNumero" nameColumn="mesAbrev" ordinalColumn="mesNumero" type="Integer" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="Mes de Encerramento">
+        </Level>
+        <Level name="DataEncerramento" visible="true" column="dmtp_id" nameColumn="data_string_br" ordinalColumn="dmtp_id" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Encerramento">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="rcbe_qtdocumentos" column="rcbe_qtdocumentos" datatype="Integer" aggregator="sum" caption="QTD.  Documentos" description="Quantidade de Documentos" visible="true">
+    </Measure>
+    <Measure name="rcbe_qtimoveisdesmarcados" column="rcbe_qtimoveisdesmarcados" datatype="Integer" aggregator="sum" caption="QTD. Imoveis Desmarcados" visible="false">
+    </Measure>
+    <Measure name="rcbe_qtimoveismarcados" column="rcbe_qtimoveismarcados" datatype="Integer" aggregator="sum" caption="QTD. Imoveis Marcados" visible="false">
+    </Measure>
+    <Measure name="rcbe_qtparcelamentos" column="rcbe_qtparcelamentos" datatype="Integer" aggregator="sum" caption="QTD. Parcelamentos" visible="false">
+    </Measure>
+    <Measure name="rcbe_qtparcelamentoscomentrada" column="rcbe_qtparcelamentoscomentrada" datatype="Integer" aggregator="sum" caption="QTD. Parcelamentos Com Entrada" visible="false">
+    </Measure>
+    <Measure name="rcbe_vldocumentos" column="rcbe_vldocumentos" datatype="Numeric" aggregator="sum" caption="VLR. Documentos" visible="true">
+    </Measure>
+    <Measure name="rcbe_vlentradaparcelamento" column="rcbe_vlentradaparcelamento" datatype="Numeric" aggregator="sum" caption="VLR. Entrada Parcelamento" visible="false">
+    </Measure>
+  </Cube>
+</Schema>

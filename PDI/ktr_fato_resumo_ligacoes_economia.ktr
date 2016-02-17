@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>ktr_fato_resumo_ligacoes_economia</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+        <parameter>
+            <name>max</name>
+            <default_value>0</default_value>
+            <description/>
+        </parameter>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2015&#x2f;06&#x2f;08 16&#x3a;57&#x3a;07.943</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2015&#x2f;06&#x2f;08 16&#x3a;57&#x3a;07.943</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>Tratamento para NULL&#x3a;&#xd;&#xa;coalesce &#x28;c.muni_id,9999&#x29; as muni_id - Geografia&#xd;&#xa;coalesce &#x28;bair_id,9999&#x29; as bair_id - Geografia&#xd;&#xa;coalesce &#x28;epod_id,9999&#x29; as epod_id - Cliente Tipo&#xd;&#xa;coalesce &#x28;cltp_id,9999&#x29; as cltp_id - Cliente Tipo</note>
+      <xloc>7</xloc>
+      <yloc>213</yloc>
+      <width>270</width>
+      <heigth>90</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50006</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <read_only>true</read_only>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>caern_dw</name>
+    <server>186.215.202.154</server>
+    <type>VERTICA5</type>
+    <access>JNDI</access>
+    <database>caern_dw</database>
+    <port>6000</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>6000</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>caern_staging</name>
+    <server/>
+    <type>VERTICA5</type>
+    <access>JNDI</access>
+    <database>caern_staging</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>caern_trans</name>
+    <server>186.215.202.154</server>
+    <type>POSTGRESQL</type>
+    <access>JNDI</access>
+    <database>caern_trans</database>
+    <port>6000</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>6000</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>comercial_gsan</name>
+    <server/>
+    <type>POSTGRESQL</type>
+    <access>JNDI</access>
+    <database>comercial_gsan</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>COMERCIAL_GSAN</name>
+    <server/>
+    <type>POSTGRESQL</type>
+    <access>JNDI</access>
+    <database>comercial_gsan</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>GERENCIAL_GSAN</name>
+    <server>192.168.64.243</server>
+    <type>POSTGRESQL</type>
+    <access>JNDI</access>
+    <database>gerencial_gsan</database>
+    <port>5432</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>GSAN_GERENCIAL_CAERN_243</name>
+    <server>192.168.64.243</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>gsan_gerencial_caern</database>
+    <port>5432</port>
+    <username>gsan_batch</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce72fe86acd2</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>oracle_procenge</name>
+    <server>192.168.64.241</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>gsancaerd</database>
+    <port>1521</port>
+    <username>gsan_admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>procenge_gsan</name>
+    <server>192.168.64.241</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>gsancaerd</database>
+    <port>1521</port>
+    <username>gsan_admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>procenge_oracle</name>
+    <server/>
+    <type>ORACLE</type>
+    <access>JNDI</access>
+    <database>procenge_oracle</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>procenge_postegres</name>
+    <server/>
+    <type>POSTGRESQL</type>
+    <access>JNDI</access>
+    <database>procenge_postegres</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Vertica 236</name>
+    <server>192.168.64.236</server>
+    <type>VERTICA5</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>5433</port>
+    <username>dbadmin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb10be71dac3ff90</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>VERTICA_JNDI</name>
+    <server/>
+    <type>VERTICA5</type>
+    <access>JNDI</access>
+    <database>gerencial_gsan_vertica</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>VERTICA_PENTAHO</name>
+    <server>192.168.64.236</server>
+    <type>VERTICA5</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>5433</port>
+    <username>dbadmin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb10be71dac3ff90</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>dimen_cliente_tipo</from><to>lookup_cliente_tipo</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimen_perfil_imovel_tarifa</from><to>lookup_perfil_imovel_tarifa</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_cliente_tipo</from><to>lookup_perfil_imovel_tarifa</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimen_geografica</from><to>lookup_geografica</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimen_categoria_subcategoria</from><to>lookup_categoria_subcategoria</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimen_tempo</from><to>lookup_tempo</to><enabled>Y</enabled> </hop>
+  <hop> <from>un_res_lig_econ</from><to>lookup_cliente_tipo</to><enabled>Y</enabled> </hop>
+  <hop> <from>localidade</from><to>lookup_localizacao</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_localizacao</from><to>lookup_tempo</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>fato_ligacao_economia</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_tempo</from><to>Calc_Num_Lig_demons</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calc_Num_Lig_demons</from><to>rele_id</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_perfil_imovel_tarifa</from><to>lookup_situacao_esgoto</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_situacao_esgoto</from><to>lookup_geografica</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimen_situacao_esgoto</from><to>lookup_situacao_esgoto</to><enabled>Y</enabled> </hop>
+  <hop> <from>dimen_situacao_agua</from><to>lookup_situacao_agua</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_categoria_subcategoria</from><to>lookup_situacao_agua</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_situacao_agua</from><to>lookup_localizacao</to><enabled>Y</enabled> </hop>
+  <hop> <from>lookup_geografica</from><to>lookup_categoria_subcategoria</to><enabled>Y</enabled> </hop>
+  <hop> <from>rele_id</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>Select values</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Calc_Num_Lig_demons</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;r1017&#x3a; Medidas para serem utilizadas no demostrativo de faturamento&#x2f;arrecadacao&#xd;&#xa;var rele_numligacoesmedidas&#xd;&#xa;var rele_numligacoesnaomedidas&#xd;&#xa;var rele_numligacoesativasesgoto&#xd;&#xa;var rele_numligacoesinativasesgoto&#xd;&#xa;var rele_numligacoesativasagua&#xd;&#xa;var rele_numligacoesinativasagua&#xd;&#xa;var rele_numligacoesnaoanalisesesgoto&#xd;&#xa;var rele_numligacoesanalisesesgoto&#xd;&#xa;var rele_numligacoesanalisesagua&#xd;&#xa;var rele_numligacoesnaoanalisesagua&#xd;&#xa;var rele_numligacodesligadasesgoto&#xd;&#xa;var rele_numligaconaodesligadasesgoto&#xd;&#xa;var rele_numligaconaodesligadasagua&#xd;&#xa;var rele_numligacodesligadasagua&#xd;&#xa;var rele_numligacocadastradassesgoto&#xd;&#xa;var rele_numligaconaocadastradassesgoto&#xd;&#xa;var rele_numligacocadastradassagua&#xd;&#xa;var rele_numligaconaocadastradassagua&#xd;&#xa;&#xd;&#xa;var rele_numeconomiasativasesgoto&#xd;&#xa;var rele_numeconomiasativasagua&#xd;&#xa;&#xd;&#xa;var rele_economiastotaisagua&#xd;&#xa;var rele_economiastotaisesgoto&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Quantidade de Ligacoes Medidias&#x2f;Nao Medidas&#xd;&#xa;if&#x28;rele_ichidrometro&#x3d;&#x3d;1&#x29;&#x7b;&#xd;&#xa;rele_numligacoesmedidas&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesmedidas&#x3d;0&#x7d;&#x3b;&#xd;&#xa;&#xd;&#xa;if&#x28;rele_ichidrometro&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligacoesnaomedidas&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesnaomedidas&#x3d;0&#x7d;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Quantidade de Ligacoes ativos&#x2f;inativos&#xd;&#xa;&#x2f;&#x2f; esgoto&#xd;&#xa;if&#x28;lest_id&#x3d;&#x3d;3 &#x7c;&#x7c; lest_id&#x3d;&#x3d;4 &#x7c;&#x7c; lest_id&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligacoesativasesgoto&#x3d;rele_qtligacoes&#x3b;&#xd;&#xa;rele_numeconomiasativasesgoto&#x3d;rele_qteconomias&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesativasesgoto&#x3d;0&#x3b;&#xd;&#xa;rele_numeconomiasativasesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;lest_icativaesgoto&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligacoesinativasesgoto&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesinativasesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Agua&#xd;&#xa;if&#x28;last_id&#x3d;&#x3d;3 &#x7c;&#x7c;last_id&#x3d;&#x3d;5 &#x7c;&#x7c; last_id&#x3d;&#x3d;6 &#x7c;&#x7c; last_id&#x3d;&#x3d;7&#x29;&#x7b;&#xd;&#xa;rele_numligacoesativasagua&#x3d;rele_qtligacoes&#x3b;&#xd;&#xa;rele_numeconomiasativasagua&#x3d;rele_qteconomias&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesativasagua&#x3d;0&#x3b;&#xd;&#xa;rele_numeconomiasativasagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;last_icativaagua&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligacoesinativasagua&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesinativasagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Quantidade de Ligacoes analise&#x2f;nao analise&#xd;&#xa;&#x2f;&#x2f; esgoto&#xd;&#xa;if&#x28;lest_icanaliseesgoto&#x3d;&#x3d;1&#x29;&#x7b;&#xd;&#xa;rele_numligacoesanalisesesgoto&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesanalisesesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;lest_icanaliseesgoto&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligacoesnaoanalisesesgoto&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesnaoanalisesesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Agua&#xd;&#xa;if&#x28;last_icanaliseagua&#x3d;&#x3d;1&#x29;&#x7b;&#xd;&#xa;rele_numligacoesanalisesagua&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesanalisesagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;last_icanaliseagua&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligacoesnaoanalisesagua&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacoesnaoanalisesagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Quantidade de Ligacoes Desligada &#x2f;nao desligada&#xd;&#xa;&#x2f;&#x2f; esgoto&#xd;&#xa;if&#x28;lest_icdesligadaesgoto&#x3d;&#x3d;1&#x29;&#x7b;&#xd;&#xa;rele_numligacodesligadasesgoto&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacodesligadasesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;lest_icdesligadaesgoto&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligaconaodesligadasesgoto&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligaconaodesligadasesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Agua &#xd;&#xa;if&#x28;last_icdesligadaagua&#x3d;&#x3d;1&#x29;&#x7b;&#xd;&#xa;rele_numligacodesligadasagua&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacodesligadasagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;last_icdesligadaagua&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligaconaodesligadasagua&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligaconaodesligadasagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Quantidade de Ligacoes Cadastradas &#x2f;nao Cadastrada&#xd;&#xa;&#x2f;&#x2f; esgoto&#xd;&#xa;if&#x28;lest_iccadastradaesgoto&#x3d;&#x3d;1&#x29;&#x7b;&#xd;&#xa;rele_numligacocadastradassesgoto&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacocadastradassesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;lest_iccadastradaesgoto&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligaconaocadastradassesgoto&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligaconaocadastradassesgoto&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Agua &#xd;&#xa;if&#x28;last_iccadastradaagua&#x3d;&#x3d;1&#x29;&#x7b;&#xd;&#xa;rele_numligacocadastradassagua&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligacocadastradassagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;if&#x28;last_iccadastradaagua&#x3d;&#x3d;2&#x29;&#x7b;&#xd;&#xa;rele_numligaconaocadastradassagua&#x3d;rele_qtligacoes&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_numligaconaocadastradassagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Economia Totais Agua sem Potencial e Factivel&#xd;&#xa;if&#x28;&#x21;&#x28;last_id&#x3d;&#x3d;1 &#x7c;&#x7c; last_id&#x3d;&#x3d;2&#x29;&#x29;&#x7b;&#xd;&#xa;rele_economiastotaisagua&#x3d;rele_qteconomias&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_economiastotaisagua&#x3d;0&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Economia Totais Esgoto sem Potencial e Factivel&#xd;&#xa;if&#x28;&#x21;&#x28;lest_id&#x3d;&#x3d;1 &#x7c;&#x7c; lest_id&#x3d;&#x3d;2&#x29;&#x29;&#x7b;&#xd;&#xa;rele_economiastotaisesgoto&#x3d;rele_qteconomias&#x7d;&#xd;&#xa;else&#x7b;&#xd;&#xa;rele_economiastotaisesgoto&#x3d;0&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>rele_numligacoesmedidas</name>
+        <rename>rele_numligacoesmedidas</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesnaomedidas</name>
+        <rename>rele_numligacoesnaomedidas</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesativasesgoto</name>
+        <rename>rele_numligacoesativasesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesinativasesgoto</name>
+        <rename>rele_numligacoesinativasesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesativasagua</name>
+        <rename>rele_numligacoesativasagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesinativasagua</name>
+        <rename>rele_numligacoesinativasagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesnaoanalisesesgoto</name>
+        <rename>rele_numligacoesnaoanalisesesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesanalisesesgoto</name>
+        <rename>rele_numligacoesanalisesesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesanalisesagua</name>
+        <rename>rele_numligacoesanalisesagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacoesnaoanalisesagua</name>
+        <rename>rele_numligacoesnaoanalisesagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacodesligadasesgoto</name>
+        <rename>rele_numligacodesligadasesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligaconaodesligadasesgoto</name>
+        <rename>rele_numligaconaodesligadasesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligaconaodesligadasagua</name>
+        <rename>rele_numligaconaodesligadasagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacodesligadasagua</name>
+        <rename>rele_numligacodesligadasagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacocadastradassesgoto</name>
+        <rename>rele_numligacocadastradassesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligaconaocadastradassesgoto</name>
+        <rename>rele_numligaconaocadastradassesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligacocadastradassagua</name>
+        <rename>rele_numligacocadastradassagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numligaconaocadastradassagua</name>
+        <rename>rele_numligaconaocadastradassagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numeconomiasativasesgoto</name>
+        <rename>rele_numeconomiasativasesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_numeconomiasativasagua</name>
+        <rename>rele_numeconomiasativasagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_economiastotaisagua</name>
+        <rename>rele_economiastotaisagua</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>rele_economiastotaisesgoto</name>
+        <rename>rele_economiastotaisesgoto</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1198</xloc>
+      <yloc>260</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>rele_id</field_name>
+<calc_type>ADD</calc_type>
+<field_a>rele</field_a>
+<field_b>id</field_b>
+<field_c/>
+<value_type>Integer</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>994</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>rele_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_amreferencia</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qtligacoes</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qteconomias</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_tmultimaalteracao</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qtligacoesnovasagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qtligacoesnovasesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qtligacoescortesmes</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qtligacoesreligadasmes</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmct_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmpt_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmse_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmgr_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmcs_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmsa_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmlo_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dmtp_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesmedidas</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesnaomedidas</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesativasesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesinativasesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesativasagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesinativasagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesnaoanalisesesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesanalisesesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesanalisesagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacoesnaoanalisesagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacodesligadasesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligaconaodesligadasesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligaconaodesligadasagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacodesligadasagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacocadastradassesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligaconaocadastradassesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligacocadastradassagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numligaconaocadastradassagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numeconomiasativasesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_numeconomiasativasagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_economiastotaisagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_economiastotaisesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qteconomiasnovasagua</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>rele_qteconomiasnovasesgoto</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>904</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dimen_categoria_subcategoria</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  dmcs_id&#xd;&#xa;, catg_id&#xd;&#xa;, catg_dscategoria&#xd;&#xa;, scat_id&#xd;&#xa;, scat_dssubcategoria&#xd;&#xa;FROM gerencial_cagepa.dimen_categoria_subcategoria&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>761</xloc>
+      <yloc>35</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dimen_cliente_tipo</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  dmct_id&#xd;&#xa;, cltp_id&#xd;&#xa;, cltp_dsclientetipo&#xd;&#xa;, epod_id&#xd;&#xa;, epod_dsesferapoder&#xd;&#xa;FROM gerencial_cagepa.dimen_cliente_tipo&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>189</xloc>
+      <yloc>36</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dimen_geografica</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  dmgr_id&#xd;&#xa;, muni_id&#xd;&#xa;, muni_nmmunicipio&#xd;&#xa;, bair_id&#xd;&#xa;, bair_nmbairro&#xd;&#xa;FROM gerencial_cagepa.dimen_geografica&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>618</xloc>
+      <yloc>35</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dimen_perfil_imovel_tarifa</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  dmpt_id&#xd;&#xa;, iper_id&#xd;&#xa;, iper_dsimovelperfil&#xd;&#xa;, cstf_id&#xd;&#xa;, cstf_dsconsumotarifa&#xd;&#xa;FROM gerencial_cagepa.dimen_perfil_imovel_tarifa&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>315</xloc>
+      <yloc>34</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dimen_situacao_agua</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  last_id&#xd;&#xa;, last_dsligacaoaguasituacao&#xd;&#xa;, last_icuso&#xd;&#xa;, last_icativaagua&#xd;&#xa;, last_icdesligadaagua&#xd;&#xa;, last_iccadastradaagua&#xd;&#xa;, last_icanaliseagua&#xd;&#xa;, lapf_id&#xd;&#xa;, lapf_dsligacaoaguaperfil&#xd;&#xa;, lapf_icuso&#xd;&#xa;, dmsa_ichidrometro&#xd;&#xa;, dmsa_icvolumefixadoagua&#xd;&#xa;, dmsa_icpoco&#xd;&#xa;, dmsa_ichidrometropoco&#xd;&#xa;, dmsa_icvolumeexcedente&#xd;&#xa;, dmsa_icligacaofaturada&#xd;&#xa;, dmsa_id&#xd;&#xa;, dmsa_ichidrometro_desc&#xd;&#xa;, dmsa_icpoco_desc&#xd;&#xa;, dmsa_icvolumefixadoagua_desc&#xd;&#xa;, dmsa_hidrometropoco_desc&#xd;&#xa;, dmsa_icvolumeexcedente_desc&#xd;&#xa;, dmsa_icligacaofaturada_desc&#xd;&#xa;, dmsa_lapf_icuso_desc&#xd;&#xa;, dmsa_last_icuso_desc&#xd;&#xa;, dmsa_last_icativaagua_desc&#xd;&#xa;, dmsa_last_icdesligadaagua_desc&#xd;&#xa;, dmsa_last_iccadastradaagua_desc&#xd;&#xa;, dmsa_last_icanaliseagua_desc&#xd;&#xa;FROM gerencial_cagepa.dimen_situacao_agua&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>938</xloc>
+      <yloc>34</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dimen_situacao_esgoto</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  lest_id&#xd;&#xa;, lest_dsligacaoesgotosituacao&#xd;&#xa;, lest_icuso&#xd;&#xa;, lest_icativaesgoto&#xd;&#xa;, lest_icdesligadaesgoto&#xd;&#xa;, lest_iccadastradaesgoto&#xd;&#xa;, lest_icanaliseesgoto&#xd;&#xa;, lepf_id&#xd;&#xa;, lepf_dsligacaoesgotoperfil&#xd;&#xa;, lepf_icuso&#xd;&#xa;, lepf_pcesgoto&#xd;&#xa;, dmse_icvolumefixadoesgoto&#xd;&#xa;, dmse_icvlexcedente&#xd;&#xa;, dmse_id&#xd;&#xa;, dmse_icvolumefixadoesgoto_desc&#xd;&#xa;, dmse_lepf_icuso_desc&#xd;&#xa;, dmse_lest_icuso_desc&#xd;&#xa;, dmse_lest_icativaesgoto_desc&#xd;&#xa;, dmse_lest_icdesligadaesgoto_desc&#xd;&#xa;, dmse_lest_icanaliseesgoto_desc&#xd;&#xa;FROM gerencial_cagepa.dimen_situacao_esgoto&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>487</xloc>
+      <yloc>31</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dimen_tempo</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  dmtp_id&#xd;&#xa;, ano&#xd;&#xa;, anomes&#xd;&#xa;&#xd;&#xa;FROM gerencial_cagepa.dimen_tempo&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1199</xloc>
+      <yloc>39</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>fato_ligacao_economia</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>3</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <schema>gerencial_cagepa</schema>
+    <table>fato_ligacao_economia</table>
+    <commit>50000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>776</xloc>
+      <yloc>268</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>localidade</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>VERTICA_JNDI</connection>
+    <sql>SELECT&#xd;&#xa;  greg_id&#xd;&#xa;, greg_nmregional&#xd;&#xa;, uneg_id&#xd;&#xa;, uneg_nmunidadenegocio&#xd;&#xa;, loca_id&#xd;&#xa;, loca_nmlocalidade&#xd;&#xa;, loca_cdelo&#xd;&#xa;, loca_nmlocalidadeelo&#xd;&#xa;, stcm_id&#xd;&#xa;, stcm_cdsetorcomercial&#xd;&#xa;, stcm_nmsetorcomercial&#xd;&#xa;, qdra_id&#xd;&#xa;, qdra_nnquadra&#xd;&#xa;, qdra_desc&#xd;&#xa;, arti_id&#xd;&#xa;, arti_dsarea&#xd;&#xa;, rota_id&#xd;&#xa;, rota_cdrota&#xd;&#xa;, rota_desc&#xd;&#xa;, ftgr_id&#xd;&#xa;, ftgr_desc&#xd;&#xa;, data_atual&#xd;&#xa;, dmlo_id&#xd;&#xa;FROM gerencial_cagepa.dimen_localizacao&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1071</xloc>
+      <yloc>53</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_categoria_subcategoria</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>dimen_categoria_subcategoria</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>catg_id</name>
+        <field>catg_id</field>
+      </key>
+      <key>
+        <name>scat_id</name>
+        <field>scat_id</field>
+      </key>
+      <value>
+        <name>dmcs_id</name>
+        <rename>dmcs_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>762</xloc>
+      <yloc>137</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_cliente_tipo</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>dimen_cliente_tipo</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>cltp_id</name>
+        <field>cltp_id</field>
+      </key>
+      <key>
+        <name>epod_id</name>
+        <field>epod_id</field>
+      </key>
+      <value>
+        <name>dmct_id</name>
+        <rename>dmct_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>188</xloc>
+      <yloc>135</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_geografica</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>dimen_geografica</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>muni_id</name>
+        <field>muni_id</field>
+      </key>
+      <key>
+        <name>bair_id</name>
+        <field>bair_id</field>
+      </key>
+      <value>
+        <name>dmgr_id</name>
+        <rename>dmgr_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>617</xloc>
+      <yloc>137</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_localizacao</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>localidade</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>greg_id</name>
+        <field>greg_id</field>
+      </key>
+      <key>
+        <name>uneg_id</name>
+        <field>uneg_id</field>
+      </key>
+      <key>
+        <name>loca_id</name>
+        <field>loca_id</field>
+      </key>
+      <key>
+        <name>stcm_id</name>
+        <field>stcm_id</field>
+      </key>
+      <key>
+        <name>loca_cdelo</name>
+        <field>loca_cdelo</field>
+      </key>
+      <key>
+        <name>qdra_id</name>
+        <field>qdra_id</field>
+      </key>
+      <key>
+        <name>rota_id</name>
+        <field>rota_id</field>
+      </key>
+      <value>
+        <name>dmlo_id</name>
+        <rename>dmlo_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1077</xloc>
+      <yloc>138</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_perfil_imovel_tarifa</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>dimen_perfil_imovel_tarifa</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>iper_id</name>
+        <field>iper_id</field>
+      </key>
+      <key>
+        <name>cstf_id</name>
+        <field>cstf_id</field>
+      </key>
+      <value>
+        <name>dmpt_id</name>
+        <rename>dmpt_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>316</xloc>
+      <yloc>136</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_situacao_agua</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>dimen_situacao_agua</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>last_id</name>
+        <field>last_id</field>
+      </key>
+      <key>
+        <name>lapf_id</name>
+        <field>lapf_id</field>
+      </key>
+      <key>
+        <name>rele_ichidrometro</name>
+        <field>dmsa_ichidrometro</field>
+      </key>
+      <key>
+        <name>rele_ichidrometropoco</name>
+        <field>dmsa_ichidrometropoco</field>
+      </key>
+      <key>
+        <name>rele_icpoco</name>
+        <field>dmsa_icpoco</field>
+      </key>
+      <key>
+        <name>rele_icvolumefixadoagua</name>
+        <field>dmsa_icvolumeexcedente</field>
+      </key>
+      <value>
+        <name>dmsa_id</name>
+        <rename>dmsa_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>last_icanaliseagua</name>
+        <rename>last_icanaliseagua</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>last_icativaagua</name>
+        <rename>last_icativaagua</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>last_iccadastradaagua</name>
+        <rename>last_iccadastradaagua</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>last_icdesligadaagua</name>
+        <rename>last_icdesligadaagua</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>924</xloc>
+      <yloc>139</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_situacao_esgoto</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>dimen_situacao_esgoto</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>lest_id</name>
+        <field>lest_id</field>
+      </key>
+      <key>
+        <name>lepf_id</name>
+        <field>lepf_id</field>
+      </key>
+      <key>
+        <name>rele_icvolumefixadoesgoto</name>
+        <field>dmse_icvolumefixadoesgoto</field>
+      </key>
+      <value>
+        <name>dmse_id</name>
+        <rename>dmse_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>lest_icanaliseesgoto</name>
+        <rename>lest_icanaliseesgoto</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>lest_icativaesgoto</name>
+        <rename>lest_icativaesgoto</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>lest_iccadastradaesgoto</name>
+        <rename>lest_iccadastradaesgoto</rename>
+        <default/>
+        <type>None</type>
+      </value>
+      <value>
+        <name>lest_icdesligadaesgoto</name>
+        <rename>lest_icdesligadaesgoto</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>481</xloc>
+      <yloc>133</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>lookup_tempo</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>dimen_tempo</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>rele_amreferencia</name>
+        <field>anomes</field>
+      </key>
+      <value>
+        <name>dmtp_id</name>
+        <rename>dmtp_id</rename>
+        <default/>
+        <type>None</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1197</xloc>
+      <yloc>140</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>rele_id</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>id</valuename>
+      <use_database>N</use_database>
+      <connection>VERTICA_JNDI</connection>
+      <schema>gerencial_cagepa</schema>
+      <seqname>rele_seq</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>1</start_at>
+      <increment_by>1</increment_by>
+      <max_value>999999999</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1066</xloc>
+      <yloc>263</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>un_res_lig_econ</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>comercial_gsan</connection>
+    <sql>-------------------------------------------&#xd;&#xa;----------- QUERY PRINCIPAL----------------&#xd;&#xa;--------RESUMO LIGACOES ECONOMIAS----------&#xd;&#xa;------------VERSAO 01&#x2f;02&#x2f;2016-------------&#xd;&#xa;-----------------------------------------------------------------------------------------------&#xd;&#xa;SELECT&#xd;&#xa;  --5000 as rele,&#xd;&#xa;  &#x24;&#x7b;max&#x7d; as rele, &#xd;&#xa; cast&#x28;&#x28;case when substr&#x28;cast&#x28;parm_amreferenciaarrecadacao as char&#x28;6&#x29;&#x29;,5,2&#x29; &#x3e; &#x27;01&#x27; then &#x28;parm_amreferenciaarrecadacao -1&#x29;&#xd;&#xa;            else  &#x28;parm_amreferenciaarrecadacao - 89&#x29; end&#x29; as char&#x28;6&#x29;&#x29; as rele_amreferencia,&#xd;&#xa;  coalesce&#x28;loca.greg_id,9999&#x29; as greg_id,&#xd;&#xa;  coalesce&#x28;loca.uneg_id,9999&#x29; as uneg_id,&#xd;&#xa;  coalesce&#x28;loca.loca_id,9999&#x29; as loca_id,&#xd;&#xa;  coalesce&#x28;loca.loca_cdelo,9999&#x29; as loca_cdelo,&#xd;&#xa;  case when imo.stcm_id     is null then 9999 else imo.stcm_id end as stcm_id,&#xd;&#xa;  case when imo.qdra_id     is null then 9999 else imo.qdra_id end as qdra_id, &#xd;&#xa;  case when quadra.rota_id  is null then 9999 else quadra.rota_id end as rota_id, &#xd;&#xa;  case when quadra.arti_id  is null then 0 else  arti_id END as arti_id, &#xd;&#xa;  coalesce&#x28;setor.stcm_cdsetorcomercial,9999&#x29; as stcm_cdsetorcomercial,&#xd;&#xa;  coalesce&#x28;quadra.qdra_nnquadra,9999&#x29; as qdra_nnquadra,&#xd;&#xa;  coalesce&#x28;setor.muni_id,9999&#x29;   as muni_id, &#xd;&#xa;  coalesce&#x28;quadra.bair_id,9999&#x29;  as bair_id,&#xd;&#xa;  coalesce&#x28;imo.iper_id,9999&#x29; as iper_id,&#xd;&#xa;  coalesce&#x28;imo.last_id,9999&#x29; as last_id,&#xd;&#xa;  coalesce&#x28;imo.lest_id,9999&#x29; as lest_id,&#xd;&#xa;  CASE  WHEN la.lapf_id  IS NULL     THEN 9999 ELSE la.lapf_id END as lapf_id,&#xd;&#xa;  CASE  WHEN le.lepf_id  IS NULL     THEN 9999 ELSE le.lepf_id END as lepf_id,&#xd;&#xa;-----------------INDICADORES--------------------------------------------------------------------------&#xd;&#xa;  CASE  WHEN la.hidi_id  IS NOT NULL THEN 1 ELSE 2                       END as rele_ichidrometro,&#xd;&#xa;  CASE  WHEN imo.hidi_id IS NOT NULL THEN 1 ELSE 2                       END as rele_ichidrometropoco,&#xd;&#xa;  CASE  WHEN coalesce&#x28;imo.poco_id,0&#x29; &#x3e; 1 THEN 1 ELSE 2                   END as rele_icpoco,&#xd;&#xa;  CASE  WHEN coalesce&#x28;la.lagu_nnconsumominimoagua,0&#x29;   &#x3e; 0 THEN 1 ELSE 2 END as rele_icvolumefixadoagua, &#xd;&#xa;  CASE  WHEN coalesce&#x28;le.lesg_nnconsumominimoesgoto,0&#x29; &#x3e; 0 THEN 1 ELSE 2 END as rele_icvolumefixadoesgoto,  &#xd;&#xa;--------------------------------------------------------------------------------------------------------&#xd;&#xa;  coalesce&#x28;imo.cstf_id,9999&#x29; as cstf_id,&#xd;&#xa;  coalesce&#x28;rota.rota_cdrota,9999&#x29; as rota_cdrota,&#xd;&#xa;  imo.imov_icimovelcondominio,&#xd;&#xa;  la.lagu_dtimplantacao,&#xd;&#xa;  le.lesg_dtligacao,&#xd;&#xa;  la.lagu_dtcorte,&#xd;&#xa;  la.lagu_dtreligacaoagua,&#xd;&#xa;-------------RECUPERA A CATEGORIA PRINCIPAL &#x28;a de maior n&#xfa;mero de economia&#x29;-------------------------------------------------------------------&#xd;&#xa;  &#x28;select catg_id from gsan_admin.imovel_subcategoria cat where cat.imov_id &#x3d; imo.imov_id &#xd;&#xa;   order by imsb_qteconomia desc, catg_id asc limit 1&#x29; as catg_id ,                &#xd;&#xa;-------------RECUPERA A SUBCATEGORIA PRINCIPAL &#x28;a de maior n&#xfa;mero de economia&#x29;-------------------------------------------------------------------&#xd;&#xa;  &#x28;select scat_id from gsan_admin.imovel_subcategoria cat where cat.imov_id &#x3d; imo.imov_id &#xd;&#xa;   order by imsb_qteconomia desc limit 1&#x29; as scat_id,  &#xd;&#xa;----------------------------------------------------------------------------------------------------------------------------------------------&#xd;&#xa;  CASE WHEN ep.epod_id IS NOT NULL THEN ep.epod_id ELSE 0 END as epod_id,&#xd;&#xa;  CASE WHEN ct.cltp_id IS NOT NULL THEN ct.cltp_id ELSE 0 END as cltp_id,&#xd;&#xa;  now&#x28;&#x29;                    as rele_tmultimaalteracao,  &#xd;&#xa;----------------------MEDIDAS-------------------------------------------------------------------------------------&#xd;&#xa;  COUNT&#x28;Case when substr&#x28;cast&#x28;coalesce&#x28;lagu_dtligacaoagua,lagu_dtreligacaoagua&#x29; as char&#x28;4&#x29;&#x29;,1,4&#x29;&#x7c;&#x7c;&#xd;&#xa;        substr&#x28;cast&#x28;coalesce&#x28;lagu_dtligacaoagua,lagu_dtreligacaoagua&#x29; as char&#x28;7&#x29;&#x29;,6,2&#x29;                           &#x3c;&#x3d; cast&#x28;&#x28;parm_amreferenciafaturamento -1&#x29; as char &#x28;6&#x29;&#x29; OR&#xd;&#xa;        substr&#x28;cast&#x28;imov_tmultimaalteracao as char&#x28;4&#x29;&#x29;,1,4&#x29;&#x7c;&#x7c;substr&#x28;cast&#x28;imov_tmultimaalteracao as char&#x28;7&#x29;&#x29;,6,2&#x29; &#x3c;&#x3d; cast&#x28;&#x28;parm_amreferenciafaturamento -1&#x29; as char &#x28;6&#x29;&#x29;&#xd;&#xa;        then 1 end&#x29; as rele_qtligacoes,&#xd;&#xa;------------------------------&#xd;&#xa;  SUM&#x28;Case when substr&#x28;cast&#x28;coalesce&#x28;lagu_dtligacaoagua,lagu_dtreligacaoagua&#x29; as char&#x28;4&#x29;&#x29;,1,4&#x29;&#x7c;&#x7c;&#xd;&#xa;      substr&#x28;cast&#x28;coalesce&#x28;lagu_dtligacaoagua,lagu_dtreligacaoagua&#x29; as char&#x28;7&#x29;&#x29;,6,2&#x29;                           &#x3c;&#x3d; cast&#x28;&#x28;parm_amreferenciafaturamento -1&#x29; as char &#x28;6&#x29;&#x29; OR&#xd;&#xa;      substr&#x28;cast&#x28;imov_tmultimaalteracao as char&#x28;4&#x29;&#x29;,1,4&#x29;&#x7c;&#x7c;substr&#x28;cast&#x28;imov_tmultimaalteracao as char&#x28;7&#x29;&#x29;,6,2&#x29; &#x3c;&#x3d; cast&#x28;&#x28;parm_amreferenciafaturamento -1&#x29; as char &#x28;6&#x29;&#x29;&#xd;&#xa;      then coalesce&#x28;imo.imov_qteconomia,0&#x29; else 0 end&#x29; as rele_qteconomias,&#xd;&#xa;------------------------------&#xd;&#xa;  SUM&#x28;Case when cast&#x28;la.lagu_dtimplantacao as char&#x28;4&#x29;&#x29;&#x7c;&#x7c;substring&#x28;cast&#x28;la.lagu_dtimplantacao as char&#x28;8&#x29;&#x29;,6,2&#x29; &#xd;&#xa;      &#x3d; cast&#x28;&#x28;parm_amreferenciaarrecadacao -1&#x29; as char&#x28;6&#x29;&#x29; then 1 else 0 end&#x29; as rele_qtligacoesnovasagua,&#xd;&#xa;&#xd;&#xa;  SUM&#x28;Case when cast&#x28;la.lagu_dtimplantacao as char&#x28;4&#x29;&#x29;&#x7c;&#x7c;substring&#x28;cast&#x28;la.lagu_dtimplantacao as char&#x28;8&#x29;&#x29;,6,2&#x29; &#xd;&#xa;      &#x3d; cast&#x28;&#x28;parm_amreferenciaarrecadacao -1&#x29; as char&#x28;6&#x29;&#x29; then coalesce&#x28;imo.imov_qteconomia,0&#x29; else 0 end&#x29; as rele_qteconomiasnovasagua,&#xd;&#xa; &#xd;&#xa;  SUM&#x28;Case when cast&#x28;la.lagu_dtreligacaoagua as char&#x28;4&#x29;&#x29;&#x7c;&#x7c;substring&#x28;cast&#x28;la.lagu_dtreligacaoagua as char&#x28;8&#x29;&#x29;,6,2&#x29; &#xd;&#xa;      &#x3d; cast&#x28;&#x28;parm_amreferenciaarrecadacao -1&#x29; as char&#x28;6&#x29;&#x29; then 1 else 0 end&#x29; as rele_qtligacoesreligadasmes,&#xd;&#xa;  SUM&#x28;Case when cast&#x28;la.lagu_dtcorte as char&#x28;4&#x29;&#x29;&#x7c;&#x7c;substring&#x28;cast&#x28;la.lagu_dtcorte as char&#x28;8&#x29;&#x29;,6,2&#x29; &#xd;&#xa;      &#x3d; cast&#x28;&#x28;parm_amreferenciaarrecadacao -1&#x29; as char&#x28;6&#x29;&#x29; then 1 else 0 end&#x29; as rele_qtligacoescortesmes,&#xd;&#xa;  SUM&#x28;Case when cast&#x28;le.lesg_dtligacao as char&#x28;4&#x29;&#x29;&#x7c;&#x7c;substring&#x28;cast&#x28;le.lesg_dtligacao as char&#x28;8&#x29;&#x29;,6,2&#x29; &#xd;&#xa;      &#x3d; cast&#x28;&#x28;parm_amreferenciaarrecadacao -1&#x29; as char&#x28;6&#x29;&#x29; then 1 else 0 end&#x29; as rele_qtligacoesnovasesgoto,    &#xd;&#xa;&#xd;&#xa;  SUM&#x28;Case when cast&#x28;le.lesg_dtligacao as char&#x28;4&#x29;&#x29;&#x7c;&#x7c;substring&#x28;cast&#x28;le.lesg_dtligacao as char&#x28;8&#x29;&#x29;,6,2&#x29; &#xd;&#xa;      &#x3d; cast&#x28;&#x28;parm_amreferenciaarrecadacao -1&#x29; as char&#x28;6&#x29;&#x29; then coalesce&#x28;imo.imov_qteconomia,0&#x29; else 0 end&#x29; as rele_qteconomiasnovasesgoto &#xd;&#xa;&#xd;&#xa;------------------------------------------------------------------------------------------------------------------&#xd;&#xa;FROM gsan_admin.imovel imo&#xd;&#xa;INNER JOIN gsan_admin.sistema_parametros                ON 1&#x3d;1  &#xd;&#xa;INNER JOIN gsan_admin.rota rota                         ON imo.rota_id &#x3d; rota.rota_id&#xd;&#xa;INNER JOIN gsan_admin.localidade loca                   ON imo.loca_id &#x3d; loca.loca_id&#xd;&#xa;INNER JOIN gsan_admin.setor_comercial setor             ON imo.stcm_id &#x3d; setor.stcm_id&#xd;&#xa;INNER JOIN gsan_admin.quadra quadra                     ON imo.qdra_id &#x3d; quadra.qdra_id&#xd;&#xa;LEFT  JOIN gsan_admin.ligacao_agua la                   ON imo.imov_id &#x3d; la.lagu_id&#xd;&#xa;LEFT  JOIN gsan_admin.ligacao_esgoto le                 ON imo.imov_id &#x3d; le.lesg_id&#xd;&#xa;----------Tabelas para recuperar a esfera de poder e tipo do cliente------------------------------------------------------- &#xd;&#xa;INNER  JOIN gsan_admin.cliente_imovel cir  ON imo.imov_id &#x3d; cir.imov_id  AND cir.crtp_id &#x3d; 3 AND cir.clim_dtrelacaofim IS NULL  &#xd;&#xa;INNER JOIN gsan_admin.cliente ci ON ci.clie_id &#x3d; cir.clie_id&#xd;&#xa;INNER JOIN gsan_admin.cliente_tipo ct ON ci.cltp_id &#x3d; ct.cltp_id&#xd;&#xa;INNER JOIN gsan_admin.esfera_poder ep ON ct.epod_id &#x3d; ep.epod_id&#xd;&#xa;--------------------------------------------------------------------------------------------------------------------&#xd;&#xa;WHERE imo.imov_icexclusao &#x3d; 2 --and lest_id in &#x28;3,5&#x29;--and imo.loca_id in &#x28; &#x24;&#x7b;loca_id&#x7d; &#x29; ----&#x28;c&#xf3;digo da localidadade&#x29;&#xd;&#xa;group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35 &#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>32</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
